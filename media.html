@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медиа - Петр I Великий</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <header class="header" id="main">
+        <nav class="menu">
+            <div class="container">
+                <div class="menu-container">
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="menu-list" id="menu-list">
+                        <li><a class="menu-item" href="index.html">Главная</a></li>
+                        <li><a class="menu-item" href="index.html#chronology">Хронология</a></li>
+                        <li><a class="menu-item" href="reforms.html">Реформы</a></li>
+                        <li><a class="menu-item" href="media.html">Медиа</a></li>
+                        <li><a class="menu-item" href="#feedback">Обратная связь</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="page-header-section">
+            <div class="container">
+                <h1>Медиа о Петре I</h1>
+                <p>Видео и аудио материалы эпохи Петра Великого</p>
+                <div class="header-actions">
+                    <a class="btn-primary" href="index.html">На главную</a>
+                </div>
+        </div>
+        </section>
+        <section class="media-section">
+            <div class="container">
+                <h2>Медиа материалы</h2>               
+                <article class="video-content">
+                    <h3>Видео о Петре I</h3>
+                    <figure>
+                        <video controls>
+                            <source src="0001-0255.mp4">
+                        </video>
+                    </figure>
+                </article>               
+                <article class="audio-content">
+                    <h3>Музыка эпохи Петра I</h3>
+                    <figure>
+                        <figcaption>Послушать музыку эпохи Петра I</figcaption>
+                        <audio controls>
+                            <source src="Марш эпохи Петра I - Марш Преображенского полка.mp3" type="audio/mp3">
+                        </audio>
+                    </figure>
+                </article>
+                <article class="gallery-content">
+                    <h3>Галерея изображений</h3>
+                    <div class="image-gallery">
+                        <figure>
+                            <img src="images/offPetr1.jpg" alt="Портрет Петра I">
+                            <figcaption>Официальный портрет Петра I</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="images/peter1_battle.jpg" alt="Петр I в битве">
+                            <figcaption>Петр I во время Полтавской битвы</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="images/model.png" alt="Корабль Полтава">
+                            <figcaption>Модель корабля Полтава</figcaption>
+                        </figure>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" id="feedback">
+        <div class="container">
+            <div class="footer-content">                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <address>
+                        <a href="mailto:info@peter1-history.ru">Email: info@peter1-history.ru</a>
+                    </address>
+                    <p>Сергиенко Анастасия Вячеславовна</p>
+                    <p>25-ИСТ-2</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Обратная связь</h3>
+                    <form class="feedback-form">
+                        <div class="form-group">
+                            <input type="text" required placeholder="Ваше имя">
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" required placeholder="Ваша фамилия">
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" required placeholder="Ваш email">
+                        </div>                        
+                        <button type="submit" class="btn-submit">Отправить</button>
+                    </form>
+                </div>                
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="index.html#chronology">Хронология</a></li>
+                        <li><a href="reforms.html">Реформы</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>                  
+</body>
+</html>
