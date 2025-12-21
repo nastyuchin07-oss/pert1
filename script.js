@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     
     initForms();
+
+    initLocalStorageAPI();
     
     initMediaHandlers();
 });
@@ -365,7 +367,33 @@ function initForms() {
         });
     });
 }
-
+function initLocalStorageAPI() {
+    console.log('Инициализация LocalStorage API');
+    const feedbackForm = document.querySelector('.feedback-form');
+    if (feedbackForm) {
+        const savedData = JSON.parse(localStorage.getItem('feedbackFormData') || '{}');
+        Object.keys(savedData).forEach(key => {
+            const input = feedbackForm.querySelector(`[name="${key}"]`);
+            if (input) input.value = savedData[key];
+        });
+        
+        feedbackForm.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('input', function() {
+                const currentData = JSON.parse(localStorage.getItem('feedbackFormData') || '{}');
+                currentData[this.name] = this.value;
+                localStorage.setItem('feedbackFormData', JSON.stringify(currentData));
+                console.log('Данные формы сохранены в LocalStorage');
+            });
+        });
+        
+        feedbackForm.addEventListener('submit', function() {
+            setTimeout(() => {
+                localStorage.removeItem('feedbackFormData');
+                console.log('Данные формы очищены после отправки');
+            }, 2000);
+        });
+    }
+} 
 function initMediaHandlers() {
     const videos = document.querySelectorAll('video');
     videos.forEach(video => {
@@ -374,7 +402,7 @@ function initMediaHandlers() {
         });
         
         video.addEventListener('ended', function() {
-            console.log('Видо завершено');
+            console.log('Видео завершено');
         });
     });
     const audios = document.querySelectorAll('audio');
